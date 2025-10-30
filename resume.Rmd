@@ -1,0 +1,38 @@
+---
+title: "RESUME"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+
+# Alissa Shams Orchi
+
+
+## EDUCATION
+
+* Master of Science in Epidemiology, Mailman School Of Public Health, Columbia University, August 2024- Present
+
+* Bachelor of Arts in Biology, Caldwell University, August 2019- May 2021
+
+## PROFESSIONAL EXPERIENCE
+
+##### Research Technician | Johns Hopkins Bloomberg School of Public Health, MD | November 2021 – June 2024
+* Processed diverse samples from NIH-funded studies, maintaining strict protocol adherence and sample integrity.
+
+* Utilize software platforms like Freezerworks and LDMS proficiently for data entry, aliquot generation, and freezer inventory
+management.
+
+* Collaborate with postdoctoral researchers and graduate students, offering guidance in advanced sample processing techniques and
+meticulous specimen management.
+
+##### Undergraduate Research Intern | May 2020 - August 2020 | Pharmaco Epidemiology & Regulatory Affairs | Washington, D.C.
+* Collected and transcribed data for a Ph.D. dissertation "Assessing Factors impacting African American Participation in Pediatric
+Type II Diabetes Clinical Trials."
+
+* Evaluated and proposed improvements to data collection processes and procedures.
+
+
+
+Go back to the [homepage](index.html).

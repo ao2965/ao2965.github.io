@@ -1,0 +1,21 @@
+---
+title: "Introductory Page"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Hello, welcome to my corner of the internet!🌸
+
+I am Alissa Shams Orchi, a graduate student in Epidemiology with a strong interest in maternal and child health. This site serves as both a portfolio of my academic and research projects.
+
+
+Learn about my experience [here](resume.html).
+
+
+And if you see a certain gray cat below, that’s Dusky, who reminds me to be resilient and at the same time priorotize my sleep. 🐱
+
+Thanks for visiting.
+
+![](images/duskyshams.jpg)
