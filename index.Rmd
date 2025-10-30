@@ -16,6 +16,6 @@ Learn about my experience [here](resume.html).
 
 And if you see a certain gray cat below, that’s Dusky, who reminds me to be resilient and at the same time priorotize my sleep. 🐱
 
-Thanks for visiting.
+Thanks for visiting.d
 
 ![](images/duskyshams.jpg)
