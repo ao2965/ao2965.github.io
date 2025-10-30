@@ -6,9 +6,12 @@ navbar:
     - text: "Resume"
       href: resume.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:ao2965@cumc.columbia.edu
+    - icon: fa-linkedin fa-lg 
+      href: https://linkedin.com/in/alissa-shams-872972211
     - icon: fa-github fa-lg
-      href: http://github.com/ao2965/
+      href: https://github.com/ao2965/  
+      
 output:
   html_document:
     theme: readable

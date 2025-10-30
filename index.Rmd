@@ -14,8 +14,8 @@ I am Alissa Shams Orchi, a graduate student in Epidemiology with a strong intere
 Learn about my experience [here](resume.html).
 
 
-And if you see a certain gray cat below, that’s Dusky, who reminds me to be resilient and at the same time priorotize my sleep. 🐱
+And if you see a certain gray cat below, that’s Dusky, who reminds me to be resilient and at the same time prioritize my sleep. 🐱
 
-Thanks for visiting.d
+Thanks for visiting.
 
 ![](images/duskyshams.jpg)
