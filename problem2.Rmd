@@ -2,10 +2,40 @@
 title: "problem2"
 author: "Alissa Shams Orchi"
 date: "2025-11-01"
-output: github_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(p8105.datasets)
+
+library(plotly)
+
 ```
+
+```{r}
+data("rest_inspec")
+
+american = rest_inspec |>
+  filter(str_detect(cuisine_description, "American"),
+         boro == "Manhattan",
+         !is.na(grade),
+         !is.na(latitude),
+         !is.na(longitude),
+         latitude != 0,      
+         longitude != 0)
+
+plot_ly(american,
+        x = ~longitude,
+        y = ~latitude,
+        type = "scatter",
+        mode = "markers",
+        color = ~grade,
+        colors = "viridis")
+```
+
+
+
+
 
