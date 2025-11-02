@@ -14,7 +14,7 @@ library(plotly)
 
 ```
 
-plot in manhattan by grade
+plot in manhattan by Z grade over the years.
 
 ```{r}
 data("rest_inspec")
@@ -22,6 +22,7 @@ data("rest_inspec")
 american = rest_inspec |>
   filter(str_detect(cuisine_description, "American"),
          boro == "Manhattan",
+         grade == "Z",
          !is.na(grade),
          !is.na(latitude),
          !is.na(longitude),
@@ -33,8 +34,7 @@ plot_ly(american,
         y = ~latitude,
         type = "scatter",
         mode = "markers",
-        color = ~grade,
-        colors = "viridis")
+        color = ~grade)
 ```
 
 
@@ -50,7 +50,32 @@ american |>
     color = ~zipcode,      
     colors = "viridis",
     showlegend = FALSE    
-  )
+  ) |>
+  layout(
+    title = "Score Distribution by zipcode")
+
 ```
 
+```{r}
+rest_inspec |>
+  filter(!is.na(grade), !is.na(inspection_date)) |>
+  mutate(year = lubridate::year(inspection_date)) |>
+  filter(year >= 2015) |>
+  count(year, grade) |>
+  plot_ly(
+    x = ~year,
+    y = ~n,
+    type = "bar",
+    color = ~grade,
+    colors = "viridis",
+    text = ~n,
+    textposition = "inside"
+  ) |>
+  layout(
+    title = "Grade variation by Year",
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Number of Inspections"),
+    barmode = "stack"
+  )
+```
 
