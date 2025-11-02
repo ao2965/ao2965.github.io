@@ -14,6 +14,8 @@ library(plotly)
 
 ```
 
+plot in manhattan by grade
+
 ```{r}
 data("rest_inspec")
 
@@ -37,5 +39,18 @@ plot_ly(american,
 
 
 
+```{r}
+american |>
+  mutate(zipcode = factor(zipcode),
+         zipcode = fct_reorder(zipcode, score)) |>
+  plot_ly(
+    x = ~zipcode,         
+    y = ~score,           
+    type = "box",
+    color = ~zipcode,      
+    colors = "viridis",
+    showlegend = FALSE    
+  )
+```
 
 
