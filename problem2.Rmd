@@ -14,7 +14,7 @@ library(plotly)
 
 ```
 
-plot in manhattan by Z grade over the years.
+#American cuisine restuarants across Manhattan
 
 ```{r}
 data("rest_inspec")
@@ -22,7 +22,6 @@ data("rest_inspec")
 american = rest_inspec |>
   filter(str_detect(cuisine_description, "American"),
          boro == "Manhattan",
-         grade == "Z",
          !is.na(grade),
          !is.na(latitude),
          !is.na(longitude),
@@ -33,12 +32,14 @@ plot_ly(american,
         x = ~longitude,
         y = ~latitude,
         type = "scatter",
-        mode = "markers",
-        color = ~grade)
+        mode = "markers"
+        )|>
+  layout(
+    title = "American cuisine restuarants across Manhattan")
 ```
 
 
-
+# Score Distribution of Amrican cuisine restaurants by zipcode in Manhattan
 ```{r}
 american |>
   mutate(zipcode = factor(zipcode),
@@ -52,10 +53,10 @@ american |>
     showlegend = FALSE    
   ) |>
   layout(
-    title = "Score Distribution by zipcode")
+    title = "Score Distribution of Amrican cuisine restaurants by zipcode in Manhattan")
 
 ```
-
+# Grade variation by Year
 ```{r}
 rest_inspec |>
   filter(!is.na(grade), !is.na(inspection_date)) |>

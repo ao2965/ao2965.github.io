@@ -1,0 +1,91 @@
+---
+title: "flexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+
+library(plotly)
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### American cuisine restuarants across Manhattan by grade
+
+```{r}
+data("rest_inspec")
+
+american = rest_inspec |>
+  filter(str_detect(cuisine_description, "American"),
+         boro == "Manhattan",
+         !is.na(grade),
+         !is.na(latitude),
+         !is.na(longitude),
+         latitude != 0,      
+         longitude != 0)
+
+plot_ly(american,
+        x = ~longitude,
+        y = ~latitude,
+        type = "scatter",
+        mode = "markers",
+        color = ~grade
+        )|>
+  layout(
+    title = "American cuisine restuarants across Manhattan by grade")
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Score Distribution of Amrican cuisine restaurants by zipcode in Manhattan
+
+```{r}
+american |>
+  mutate(zipcode = factor(zipcode),
+         zipcode = fct_reorder(zipcode, score)) |>
+  plot_ly(
+    x = ~zipcode,         
+    y = ~score,           
+    type = "box",
+    color = ~zipcode,      
+    colors = "viridis",
+    showlegend = FALSE    
+  ) |>
+  layout(
+    title = "Score Distribution of American cuisine by zipcode")
+```
+
+### Grade variation by Year
+
+```{r}
+rest_inspec |>
+  filter(!is.na(grade), !is.na(inspection_date)) |>
+  mutate(year = lubridate::year(inspection_date)) |>
+  filter(year >= 2015) |>
+  count(year, grade) |>
+  plot_ly(
+    x = ~year,
+    y = ~n,
+    type = "bar",
+    color = ~grade,
+    colors = "viridis",
+    text = ~n,
+    textposition = "inside"
+  ) |>
+  layout(
+    title = "Grade variation by Year",
+    xaxis = list(title = "Year"),
+    yaxis = list(title = "Number of Inspections"),
+    barmode = "stack"
+  )
+```
+
