@@ -1,17 +1,22 @@
-name: "Yay internet!"
+name: "Website"
 output_dir: "."
+
 navbar:
   title: "Home"
   right:
     - text: "Resume"
       href: resume.html
     - icon: fa-envelope fa-lg
-      href: mailto:ao2965@cumc.columbia.edu
-    - icon: fa-linkedin fa-lg 
-      href: https://linkedin.com/in/alissa-shams-872972211
+      href: "mailto:ao2965@cumc.columbia.edu"
+    - icon: fa-linkedin fa-lg
+      href: "https://linkedin.com/in/alissa-shams-872972211"
     - icon: fa-github fa-lg
-      href: https://github.com/ao2965/  
-      
+      href: "https://github.com/ao2965/"
+    - text: "flexdashboard"
+      href: flexdashboard.html
+    - text: "problem 2"
+      href: problem2.html
+
 output:
   html_document:
     theme: readable

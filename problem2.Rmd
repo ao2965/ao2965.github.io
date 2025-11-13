@@ -14,7 +14,7 @@ library(plotly)
 
 ```
 
-#American cuisine restuarants across Manhattan
+#American cuisine restuarants across Manhattan by grade
 
 ```{r}
 data("rest_inspec")
@@ -32,11 +32,13 @@ plot_ly(american,
         x = ~longitude,
         y = ~latitude,
         type = "scatter",
-        mode = "markers"
+        mode = "markers",
+        color = ~grade
         )|>
   layout(
-    title = "American cuisine restuarants across Manhattan")
+    title = "American cuisine restuarants across Manhattan by grade")
 ```
+
 
 
 # Score Distribution of Amrican cuisine restaurants by zipcode in Manhattan
